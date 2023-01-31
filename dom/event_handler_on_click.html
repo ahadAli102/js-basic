@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert('Hello')">Click me</button>
+
+    <button onclick="buttonClick()">Click me</button>
+    <br>
+    <br>
+    
+    <br>
+    <br>
+
+    <button onclick="add()">Add</button>
+    <p id="pa">0</p>
+    <button onclick="sub()">Sub</button>
+
+    <script>
+        function buttonClick() {
+            alert('Hello Everyone');
+        }
+
+        function add() {
+            let number = Number.parseInt(document.querySelector('#pa').innerHTML);
+            number ++;
+            document.querySelector('#pa').innerHTML = ''+number;
+        }
+
+        function sub() {
+            let number = Number.parseInt(document.querySelector('#pa').innerHTML);
+            if(number > 0){
+                number --;
+                document.querySelector('#pa').innerHTML = ''+number;
+            }
+        }
+    </script>
+</body>
+</html>

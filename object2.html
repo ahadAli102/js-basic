@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object 2</title>
+</head>
+<body>
+    <script>
+        function Student(name,age,cgpa,language) {
+            this.name = name;
+            this.age = age;
+            this.cgpa = cgpa;
+            this.language = language;
+
+            this.display = function() {
+                console.log(this.name);
+                console.log(this.age);
+                console.log(this.cgpa);
+                console.log(this.language);
+            }
+
+            this.addCgpa = function( cgpa) {
+                this.cgpa += cgpa;
+            }
+
+            this.getMulti = function(){
+                return this.cgpa * this.age;
+            }
+        }
+
+
+        var student1 = new Student('Ahad Ali', 21, 3.83, 
+                        ['java','kotlin', 'mysql','javascript'])
+        student1.display();
+        student1.addCgpa(.02);
+        student1.display();
+        console.log(student1.getMulti());
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-primary">
+            <input type="checkbox" name="program" value="JAVA"/> JAVA
+        </label>
+
+        <label class="btn btn-primary">
+            <input type="checkbox" name="program" value="C#"/> C#
+        </label>
+        <label class="btn btn-primary">
+            <input type="checkbox" name="program" value="PYTHON"/> PYTHON
+        </label>
+    </div>
+
+
+    <select name="language" id="">
+        <option value='java'>java</option>
+        <option value='C#'>C#</option>
+        <option value='PYTHON'>PYTHON</option>
+    </select>
+
+    <script>
+        const programs = document.querySelectorAll(
+            'input[name=program]'
+        );
+        Array.from(programs).map(program =>{
+
+
+            program.addEventListener('change',(event) => {
+                if(event.target.checked){
+                    console.log(event.target.value);
+                }
+            });
+
+        });
+
+        const language = document.querySelector('select[name=language]');
+        language.addEventListener('change',(event) => {
+            console.log(event.target.value);
+        });
+    </script>
+</body>
+</html>

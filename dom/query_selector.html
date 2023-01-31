@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>query selector</title>
+</head>
+<body>
+    <p id="para1" class="example">I am a paragraph.</p>
+    <p id="para2" class="example">I am a paragraph.</p>
+    <p id="para3" class="example">I am a paragraph.</p>
+    <p id="para4" class="example">I am a paragraph.</p> 
+    <script>
+
+        document.getElementById('para1').innerText = "hi";
+        document.querySelector('#para2').innerText = "hi";
+
+        document.querySelector(".example").style.backgroundColor = "red"; // get the fris element of the class
+
+        document.querySelector("p").style.fontSize = "100px"; // get the fris element of the class
+        
+        // const nodeList = document.querySelectorAll(".example"); // get the fris element of the class
+
+        // nodeList.forEach(element => {
+        //     element.style.backgroundColor = 'blue';
+        // });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var names = ['Linkon','Ahad','Ali'];
+        // console.log(names);
+        // names.push('Adi');// add element to last
+        // console.log(names);
+        // console.log(names.pop()); // pop last element from array
+        // console.log(names.shift()); // pop frist element from array
+        // console.log(names);
+        // names.unshift('Adi');// add element to frist
+        // console.log(names);
+
+        // names.splice(0,2); // remove value from 0th index to 2 value
+        // console.log(names);
+
+        // names.splice(1,1,'Bill','Gates','Jhon'); // remove value from 0th index to 1 value and add new value from 1th index
+        // console.log(names);
+
+        var newArray = names.slice(1); // creates new array from 1th index
+        console.log(newArray);
+        console.log(names.sort()); // ascendning sort
+        console.log(names.reverse()); // decending sort
+
+        let nums = [0,-1,1,3,0,-7];
+        nums.sort((a,b) =>{
+            return b-a;
+        });
+
+        console.log(nums);
+
+    </script>
+</body>
+</html>

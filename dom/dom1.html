@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="text-area" /> 
+    <button id="add-frist" onclick="create('frist')">Add Frist</button>
+    <button id="add-last" onclick="create('last')">Add Last</button>
+    
+    <div class="my-div">
+        
+    </div>
+
+    <script>
+
+        function create(type){
+            const text = document.getElementById('text-area').value.trim();
+            console.log(text+" "+text.trim.length );
+            const mainDiv = document.querySelector('.my-div');
+            if(text.length > 0){
+                console.log(type);
+                const childDiv = document.createElement('div');
+                
+                const updateButton = document.createElement('button');
+                updateButton.innerHTML = 'update';
+
+                const deleteButton = document.createElement('button');
+                deleteButton.innerHTML = 'delete';
+
+                const h1 = document.createElement('h1');
+                const textNode = document.createTextNode(text);
+                h1.innerHTML = text;
+
+                childDiv.appendChild(h1);
+                childDiv.appendChild(updateButton);
+                childDiv.appendChild(deleteButton)
+
+                deleteButton.addEventListener("click",event=> { 
+                    mainDiv.removeChild(childDiv);
+                })
+
+                updateButton.addEventListener("click",event=> { 
+                    h1.innerHTML += new Date().getMilliseconds();
+                })
+                if(type == 'frist'){
+                    mainDiv.insertBefore(childDiv,mainDiv.firstChild);
+                }
+                else if(type == 'last'){
+                    mainDiv.appendChild(childDiv);
+                }
+            }
+        };
+
+        // function frist(){
+        //     const text = document.getElementById('text-area').value.trim();
+        //     console.log(text+" "+text.trim.length );
+        //     const mainDiv = document.querySelector('.my-div');
+        //     if(text.length > 0){
+        //         console.log('add last');
+        //         const childDiv = document.createElement('div');
+                
+        //         const updateButton = document.createElement('button');
+        //         updateButton.innerHTML = 'update';
+
+        //         const deleteButton = document.createElement('button');
+        //         deleteButton.innerHTML = 'delete';
+
+        //         const h1 = document.createElement('h1');
+        //         const textNode = document.createTextNode(text);
+        //         h1.innerHTML = text;
+
+        //         childDiv.appendChild(h1);
+        //         childDiv.appendChild(updateButton);
+        //         childDiv.appendChild(deleteButton)
+
+        //         deleteButton.addEventListener("click",event=> { 
+        //             mainDiv.removeChild(childDiv);
+        //         })
+
+        //         updateButton.addEventListener("click",event=> { 
+        //             h1.innerHTML += new Date().getMilliseconds();
+        //         })
+
+
+                
+        //     }
+        // };
+
+    </script>
+</body>
+</html>
